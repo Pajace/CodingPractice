@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="SingleNumber_unittest.cs" />
     <Compile Include="WildcardMatching_unittest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
