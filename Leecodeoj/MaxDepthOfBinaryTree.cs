@@ -4,12 +4,10 @@
 // <Reference>https://oj.leetcode.com/problems/maximum-depth-of-binary-tree/</reference>
 //----------------------------------------------------------------------
 
-
-
 using System.Collections.Generic;
 namespace Leecodeoj
 {
-    
+
     /// <summary>
     /// Definition for binary tree
     /// public class TreeNode {
@@ -48,7 +46,7 @@ namespace Leecodeoj
             {
                 root = stack.Peek();
 
-                if (path.Count!=0 && root == path.Peek()) // 到最末端節點
+                if (path.Count != 0 && root == path.Peek()) // 到最末端節點
                 {
                     if (path.Count > maxDepth)
                         maxDepth = path.Count;
