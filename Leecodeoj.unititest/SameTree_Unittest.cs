@@ -60,6 +60,126 @@ namespace Leecodeoj.unititest
             assertIsTheSameTree(null, null, true);
         }
 
+        [TestMethod]
+        public void SameTree_isSameTree_OneMoreNodeTest1()
+        {
+            TreeNode root1 = createTreeNode9NodeType1_value1();
+            TreeNode root2 = createTreeNode9NodeType1_value1();
+            
+            TreeNode node10 = new TreeNode(10);
+            root2.left.right.left = node10;
+
+            assertIsTheSameTree(root1, root2, false);
+        }
+
+        [TestMethod]
+        public void SameTree_isSameTree_OneMoreNodeTest2()
+        {
+            TreeNode root1 = createTreeNode9NodeType1_value1();
+            TreeNode root2 = createTreeNode9NodeType1_value1();
+
+            TreeNode node10 = new TreeNode(10);
+            root2.left.right.right = node10;
+
+            assertIsTheSameTree(root1, root2, false);
+        }
+
+        [TestMethod]
+        public void SameTree_isSameTree_OneMoreNodeTest3()
+        {
+            TreeNode root1 = createTreeNode9NodeType1_value1();
+            TreeNode root2 = createTreeNode9NodeType1_value1();
+
+            TreeNode node10 = new TreeNode(10);
+            root2.right.left.left = node10;
+
+            assertIsTheSameTree(root1, root2, false);
+        }
+
+        [TestMethod]
+        public void SameTree_isSameTree_OneMoreNodeTest4()
+        {
+            TreeNode root1 = createTreeNode9NodeType1_value1();
+            TreeNode root2 = createTreeNode9NodeType1_value1();
+
+            TreeNode node10 = new TreeNode(10);
+            root2.right.left.right = node10;
+
+            assertIsTheSameTree(root1, root2, false);
+        }
+
+        [TestMethod]
+        public void SameTree_isSameTree_OneMoreNodeTest5()
+        {
+            TreeNode root1 = createTreeNode9NodeType1_value1();
+            TreeNode root2 = createTreeNode9NodeType1_value1();
+
+            TreeNode node10 = new TreeNode(10);
+            root2.right.right.right = node10;
+
+            assertIsTheSameTree(root1, root2, false);
+        }
+
+        [TestMethod]
+        public void SameTree_isSameTree_OneMoreNodeTest6()
+        {
+            TreeNode root1 = createTreeNode9NodeType1_value1();
+            TreeNode root2 = createTreeNode9NodeType1_value1();
+
+            TreeNode node10 = new TreeNode(10);
+            root2.right.right.left = node10;
+
+            assertIsTheSameTree(root1, root2, false);
+        }
+
+        [TestMethod]
+        public void SameTree_isSameTree_OneMoreNodeTest7()
+        {
+            TreeNode root1 = createTreeNode9NodeType1_value1();
+            TreeNode root2 = createTreeNode9NodeType1_value1();
+
+            TreeNode node10 = new TreeNode(10);
+            root2.left.left.left.left = node10;
+
+            assertIsTheSameTree(root1, root2, false);
+        }
+
+        [TestMethod]
+        public void SameTree_isSameTree_OneMoreNodeTest8()
+        {
+            TreeNode root1 = createTreeNode9NodeType1_value1();
+            TreeNode root2 = createTreeNode9NodeType1_value1();
+
+            TreeNode node10 = new TreeNode(10);
+            root2.left.left.left.right = node10;
+
+            assertIsTheSameTree(root1, root2, false);
+        }
+
+        [TestMethod]
+        public void SameTree_isSameTree_OneMoreNodeTest9()
+        {
+            TreeNode root1 = createTreeNode9NodeType1_value1();
+            TreeNode root2 = createTreeNode9NodeType1_value1();
+
+            TreeNode node10 = new TreeNode(10);
+            root2.left.left.right.right = node10;
+
+            assertIsTheSameTree(root1, root2, false);
+        }
+
+        [TestMethod]
+        public void SameTree_isSameTree_OneMoreNodeTest10()
+        {
+            TreeNode root1 = createTreeNode9NodeType1_value1();
+            TreeNode root2 = createTreeNode9NodeType1_value1();
+
+            TreeNode node10 = new TreeNode(10);
+            root2.left.left.right.left = node10;
+
+            assertIsTheSameTree(root1, root2, false);
+        }
+
         //       1
         //      / \
         //     2    3
@@ -86,6 +206,7 @@ namespace Leecodeoj.unititest
             node3.left = node6;
             node3.right = node7;
             node4.left = node8;
+            node4.right = node9;
             node7.right = node9;
 
             return node1;

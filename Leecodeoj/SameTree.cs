@@ -20,7 +20,7 @@ namespace Leecodeoj
         public bool isSameTree(TreeNode root1, TreeNode root2)
         {
             if (root1 == null && root2 == null) return true;
-            if (root1 == null ^ root2 == null) return false;// bug here
+            if (root1 == null ^ root2 == null) return false;
 
             Stack<TreeNode> stack1 = new Stack<TreeNode>();
             Stack<TreeNode> stack2 = new Stack<TreeNode>();
@@ -36,28 +36,39 @@ namespace Leecodeoj
                 if (node1.val != node2.val)
                     return false;
 
-                if (node1.left != null && node2.left != null)
+                bool isOnlyOneNodeHasLeftChild = node1.left == null ^ node2.left == null;
+                bool isOnlyOneNodeHasRightChild = node1.right == null ^ node2.right == null;
+                bool isBothNodeHasLeftChild = node1.left != null && node2.left != null;
+                bool isBothNodeHasRightChild = node1.right != null && node2.right != null;
+
+                if (isOnlyOneNodeHasLeftChild || isOnlyOneNodeHasRightChild)
+                    return false;
+
+                
+                if (isBothNodeHasLeftChild)
                 {
                     stack1.Push(node1.left);
                     stack2.Push(node2.left);
                 }
-                else if (node1.left == null ^ node2.left == null)
-                {
-                    return false;
-                }
 
-                if (node1.right != null && node2.right != null)
+                if (isBothNodeHasRightChild)
                 {
                     stack1.Push(node1.right);
                     stack2.Push(node2.right);
-                }
-                else if (node1.right == null ^ node2.right == null)
-                {
-                    return false;
                 }
             }
 
             return true;
         }
+
+        //private bool bothNodeHaveChild(TreeNode childNode1, TreeNode childNode2)
+        //{
+        //    return (childNode1 != null && childNode2 != null);
+        //}
+
+        //private bool onlyOneNodeHasNoChild(TreeNode childNode1, TreeNode childNode2)
+        //{
+        //    return childNode1 == null ^ childNode2 == null;
+        //}
     }
 }
