@@ -60,15 +60,5 @@ namespace Leecodeoj
 
             return true;
         }
-
-        //private bool bothNodeHaveChild(TreeNode childNode1, TreeNode childNode2)
-        //{
-        //    return (childNode1 != null && childNode2 != null);
-        //}
-
-        //private bool onlyOneNodeHasNoChild(TreeNode childNode1, TreeNode childNode2)
-        //{
-        //    return childNode1 == null ^ childNode2 == null;
-        //}
     }
 }
