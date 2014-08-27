@@ -53,6 +53,7 @@
     <Compile Include="SingleNumber_unittest.cs" />
     <Compile Include="MaxDepthOfBinaryTree_Unittest.cs" />
     <Compile Include="SameTree_Unittest.cs" />
+    <Compile Include="ReverseInteger_Unittest.cs" />
     <Compile Include="WildcardMatching_unittest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
