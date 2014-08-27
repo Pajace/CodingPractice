@@ -38,20 +38,17 @@ namespace Leecodeoj
 
                 bool isOnlyOneNodeHasLeftChild = node1.left == null ^ node2.left == null;
                 bool isOnlyOneNodeHasRightChild = node1.right == null ^ node2.right == null;
-                bool isBothNodeHasLeftChild = node1.left != null && node2.left != null;
-                bool isBothNodeHasRightChild = node1.right != null && node2.right != null;
 
                 if (isOnlyOneNodeHasLeftChild || isOnlyOneNodeHasRightChild)
                     return false;
 
-                
-                if (isBothNodeHasLeftChild)
+                if (node1.left!=null)
                 {
                     stack1.Push(node1.left);
                     stack2.Push(node2.left);
                 }
 
-                if (isBothNodeHasRightChild)
+                if (node1.right!=null)
                 {
                     stack1.Push(node1.right);
                     stack2.Push(node2.right);
