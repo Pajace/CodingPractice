@@ -5,7 +5,7 @@ using Leecodeoj;
 namespace Leecodeoj.unititest
 {
     [TestClass]
-    public class UnitTest1
+    public class BestTimeToBuy_I_Unittest
     {
         private void assertMaxProfit(int[] prices, int expectedMaxProfit)
         {
