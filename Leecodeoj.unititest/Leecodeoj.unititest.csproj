@@ -55,6 +55,7 @@
     <Compile Include="SameTree_Unittest.cs" />
     <Compile Include="ReverseInteger_Unittest.cs" />
     <Compile Include="RemoteDuplicate_unittest.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="WildcardMatching_unittest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
