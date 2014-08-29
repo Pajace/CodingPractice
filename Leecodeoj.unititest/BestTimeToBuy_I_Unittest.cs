@@ -9,7 +9,7 @@ namespace Leecodeoj.unititest
     {
         private void assertMaxProfit(int[] prices, int expectedMaxProfit)
         {
-            BestTimeToBy_1 b = new BestTimeToBy_1();
+            BestTimeToBy_I b = new BestTimeToBy_I();
 
             int actualMaxProfit = b.maxProfit(prices);
 

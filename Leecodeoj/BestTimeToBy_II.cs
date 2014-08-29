@@ -26,7 +26,23 @@ namespace Leecodeoj
         /// <returns>max profit</returns>
         public int maxProfit(int[] prices)
         {
-            throw new NotImplementedException();
+            if (prices.Length <= 1) return 0;
+
+            int totalProft = 0;
+            int minPrice = prices[0];
+            foreach (var currentPrice in prices)
+            {
+                if (currentPrice < minPrice)
+                    minPrice = currentPrice;
+                int profit = currentPrice - minPrice;
+                if (profit > 0)
+                {
+                    totalProft += profit;
+                    minPrice = currentPrice;
+                }
+            }
+
+            return totalProft;
         }
     }
 }

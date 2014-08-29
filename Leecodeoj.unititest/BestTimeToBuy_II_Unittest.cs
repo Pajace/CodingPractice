@@ -15,17 +15,10 @@ namespace Leecodeoj.unititest
             Assert.AreEqual(expectedMaxProfit, actualMaxProfit);
         }
 
-        [TestMethod]
-        public void maxProfit_testcase1()
-        {
-            int expectedProfit = 0;
-            int[] prices = { };
 
-            assertMaxProfit(prices, expectedProfit);
-        }
 
         [TestMethod]
-        public void maxProfit_testcase2()
+        public void maxProfit_zeroProfit_input1()
         {
             int expectedProfit = 0;
             int[] prices = { 2, 1 };
@@ -34,28 +27,73 @@ namespace Leecodeoj.unititest
         }
 
         [TestMethod]
-        public void maxProfit_testcase3()
+        public void maxProfit_zeroProfit_input2()
         {
-            int expectedProfit = 3;
-            int[] prices = { 1, 2, 4 };
+            int expectedProfit = 0;
+            int[] prices = { 8, 7, 6, 5, 4, 3, 2, 1 };
 
             assertMaxProfit(prices, expectedProfit);
         }
 
         [TestMethod]
-        public void maxProfit_testcase4()
+        public void maxProfit_zeroProfit_input3()
         {
-            int expectedProfit = 5;
-            int[] prices = { 1, 5, 2, 3 };
+            int expectedProfit = 0;
+            int[] prices = { };
 
             assertMaxProfit(prices, expectedProfit);
         }
 
         [TestMethod]
-        public void maxProfit_testcase5()
+        public void maxProfit_IncreaseStock()
         {
-            int expectedProfit = 16;
-            int[] prices = { 1, 1, 2, 10, 11, 13, 5, 1, 5, 0 };
+            int expectedProfit = 8;
+            int[] prices = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+            assertMaxProfit(prices, expectedProfit);
+        }
+
+        [TestMethod]
+        public void maxProfit_OnePeekStock()
+        {
+            int expectedProfit = 8;
+            int[] prices = { 1, 3, 6, 8, 9, 6, 4, 2, 1 };
+
+            assertMaxProfit(prices, expectedProfit);
+        }
+
+        [TestMethod]
+        public void maxProfit_TwoPeekStock()
+        {
+            int expectedProfit = 19;
+            int[] prices = { 1, 3, 5, 8, 11, 6, 3, 2, 1, 1, 1, 1, 1, 4, 8, 10, 5, 2, 1, 0 };
+
+            assertMaxProfit(prices, expectedProfit);
+        }
+
+        [TestMethod]
+        public void maxProfit_OneFlatPeek()
+        {
+            int expectedProfit = 1;
+            int[] prices = { 1, 1, 2, 2, 1, 1 };
+
+            assertMaxProfit(prices, expectedProfit);
+        }
+
+        [TestMethod]
+        public void maxProfit_TwoFlatPeek()
+        {
+            int expectedProfit = 6;
+            int[] prices = { 1, 1, 2, 2, 1, 1, 0, 0, 5, 5, 0, 0 };
+
+            assertMaxProfit(prices, expectedProfit);
+        }
+
+        [TestMethod]
+        public void maxProfit_OneByOneBuySell()
+        {
+            int expectedProfit = 4;
+            int[] prices = { 5, 6, 5, 6, 5, 6, 5, 6 };
 
             assertMaxProfit(prices, expectedProfit);
         }
