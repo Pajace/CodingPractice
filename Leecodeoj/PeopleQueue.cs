@@ -10,6 +10,9 @@ namespace Leecodeoj
     /// 問題描述：
     ///      有 totalPerson 個人在排隊，從第 startPerson 開始（含），每隔 interval 取一人，共取 countOfSelected 個人
     ///      若遇到最後一個則接著第一個往下數
+    ///      例如：有10個人排隊 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+    ///            從第 2 個人開始, 每個 4 人取一個, 共取 5 位
+    ///            則選取到的人為  [2, 6, 10, 5, 1]
     /// </summary>
     public class PeopleQueue
     {

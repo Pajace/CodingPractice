@@ -16,7 +16,7 @@ namespace Leecodeoj.unititest
         }
 
         [TestMethod]
-        public void test()
+        public void test1()
         {
             int[] expecteds = { 3, 6, 9, 2, 7, 1, 8 };
             int[] actuals = PeopleQueue.Select(10, 3, 3, 7);
@@ -47,6 +47,15 @@ namespace Leecodeoj.unititest
         {
             int[] expecteds = { 8, 3, 14, 11, 9, 7, 10, 13, 2, 12 };
             int[] actuals = PeopleQueue.Select(15, 8, 10, 10);
+
+            compareTwoArray(expecteds, actuals);
+        }
+
+        [TestMethod]
+        public void test5()
+        {
+            int[] expecteds = { 2, 6, 10, 5, 1 };
+            int[] actuals = PeopleQueue.Select(10, 2, 4, 5);
 
             compareTwoArray(expecteds, actuals);
         }
