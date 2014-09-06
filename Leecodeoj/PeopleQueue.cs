@@ -4,6 +4,7 @@
 //----------------------------------------------------------------------
 
 using System;
+using System.Collections.Generic;
 namespace Leecodeoj
 {
     /// <summary>
@@ -26,7 +27,25 @@ namespace Leecodeoj
         /// <returns></returns>
         public static int[] Select(int totalPerson, int startPerson, int interval, int countOfSelected)
         {
-            throw new NotImplementedException();
+            List<int> personList = new List<int>();
+            int[] selectedPerson = new int[countOfSelected];
+
+            for (int i = 0; i < totalPerson; i++)
+                personList.Add((i + 1));
+
+            int selectedIndex = startPerson - 1;
+            for (int i = 0; i < countOfSelected; i++)
+            {
+                selectedPerson[i] = personList[selectedIndex];
+
+                personList.RemoveAt(selectedIndex);
+                selectedIndex--;
+
+                selectedIndex += interval;
+                selectedIndex %= personList.Count;
+            }
+
+            return selectedPerson;
         }
     }
 }
