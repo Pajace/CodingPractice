@@ -58,6 +58,7 @@
     <Compile Include="BestTimeToBuy_I_Unittest.cs" />
     <Compile Include="BestTimeToBuy_II_Unittest.cs" />
     <Compile Include="PeopleQueue_Unittest.cs" />
+    <Compile Include="Candy_Unittest.cs" />
     <Compile Include="WildcardMatching_unittest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -30,8 +30,7 @@ namespace Leecodeoj
             List<int> personList = new List<int>();
             int[] selectedPerson = new int[countOfSelected];
 
-            for (int i = 0; i < totalPerson; i++)
-                personList.Add((i + 1));
+            InitialPersonList(totalPerson, personList);
 
             int selectedIndex = startPerson - 1;
             for (int i = 0; i < countOfSelected; i++)
@@ -41,11 +40,23 @@ namespace Leecodeoj
                 personList.RemoveAt(selectedIndex);
                 selectedIndex--;
 
-                selectedIndex += interval;
-                selectedIndex %= personList.Count;
+                selectedIndex = GetNextPersonIndex(interval, personList.Count, selectedIndex);
             }
 
             return selectedPerson;
+        }
+
+        private static int GetNextPersonIndex(int interval, int countOfPersonList, int selectedIndex)
+        {
+            selectedIndex += interval;
+            selectedIndex %= countOfPersonList;
+            return selectedIndex;
+        }
+
+        private static void InitialPersonList(int totalPerson, List<int> personList)
+        {
+            for (int i = 0; i < totalPerson; i++)
+                personList.Add((i + 1));
         }
     }
 }
