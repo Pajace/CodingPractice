@@ -18,6 +18,15 @@ namespace Leecodeoj.unititest
         }
 
         [TestMethod]
+        public void testIncrease()
+        {
+            int[] ratings = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int expected = 55;
+
+            AssertMinimunCandiesYouMustGive(expected, ratings);
+        }
+
+        [TestMethod]
         public void test()
         {
             int[] ratings = { 3, 2, 1, 4, 3 };
@@ -113,6 +122,15 @@ namespace Leecodeoj.unititest
         {
             int[] ratings = { 1, 2, 2 };
             int expected = 4;
+
+            AssertMinimunCandiesYouMustGive(expected, ratings);
+        }
+
+        [TestMethod]
+        public void comprehensiveTest3()
+        {
+            int[] ratings = { 1, 2, 3, 4, 5, 5, 5, 4, 4, 3, 3, 3, 2, 2, 1 };
+            int expected = 29;
 
             AssertMinimunCandiesYouMustGive(expected, ratings);
         }
