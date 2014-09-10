@@ -52,6 +52,7 @@
     <Compile Include="ReverseInteger.cs" />
     <Compile Include="SameTree.cs" />
     <Compile Include="SingleNumber.cs" />
+    <Compile Include="TwoSum.cs" />
     <Compile Include="WildcardMatching.cs" />
   </ItemGroup>
   <ItemGroup>
