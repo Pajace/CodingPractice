@@ -47,13 +47,6 @@ namespace Leecodeoj
 
             while (l1 != null || l2 != null || digitInTens != 0)
             {
-
-                if (l1 == null && l2 == null)
-                {
-                    node.next = new ListNode(digitInTens);
-                    break;
-                }
-
                 sum = getSumOfNodesValue(l1, l2) + digitInTens;
 
                 digitInOnes = getDigitInOnes(sum);
