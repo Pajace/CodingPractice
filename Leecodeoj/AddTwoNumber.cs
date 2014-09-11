@@ -12,10 +12,6 @@
 // Output: 7 -> 0 -> 8
 
 using Leecodeoj.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Leecodeoj
 {
@@ -39,7 +35,6 @@ namespace Leecodeoj
 
             while (l1 != null || l2 != null || digitInTens != 0)
             {
-
                 int sum = getSumOfNodesValue(l1, l2) + digitInTens;
                 int digitInOnes = getDigitInOnes(sum);
 
