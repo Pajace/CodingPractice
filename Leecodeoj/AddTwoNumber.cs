@@ -32,24 +32,17 @@ namespace Leecodeoj
         /// <returns></returns>
         public ListNode addTwoNumbers(Common.ListNode l1, Common.ListNode l2)
         {
+            ListNode dummy = new ListNode(0);
+            ListNode node = dummy;
 
-            ListNode node = null;
-            ListNode headNode = null;
-
-            int sum = getSumOfNodesValue(l1, l2);
-            int digitInOnes = getDigitInOnes(sum);
-            int digitInTens = getDigitInTens(sum);
-
-            node = new ListNode(digitInOnes);
-            headNode = node;
-            l1 = getNextNode(l1);
-            l2 = getNextNode(l2);
+            int digitInTens = 0;
 
             while (l1 != null || l2 != null || digitInTens != 0)
             {
-                sum = getSumOfNodesValue(l1, l2) + digitInTens;
 
-                digitInOnes = getDigitInOnes(sum);
+                int sum = getSumOfNodesValue(l1, l2) + digitInTens;
+                int digitInOnes = getDigitInOnes(sum);
+
                 digitInTens = getDigitInTens(sum);
                 node.next = new ListNode(digitInOnes);
 
@@ -58,7 +51,7 @@ namespace Leecodeoj
                 l2 = getNextNode(l2);
             }
 
-            return headNode;
+            return dummy.next;
         }
 
         private static int getDigitInTens(int sum)
