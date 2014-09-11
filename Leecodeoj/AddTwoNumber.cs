@@ -32,50 +32,60 @@ namespace Leecodeoj
         /// <returns></returns>
         public ListNode addTwoNumbers(Common.ListNode l1, Common.ListNode l2)
         {
-            ListNode result = null;
+
+            ListNode node = null;
             ListNode headNode = null;
-            int? carryDigit = null;
 
+            int sum = getSumOfNodesValue(l1, l2);
+            int digitInOnes = getDigitInOnes(sum);
+            int digitInTens = getDigitInTens(sum);
 
-            while (l1 != null || l2 != null || carryDigit != null)
+            node = new ListNode(digitInOnes);
+            headNode = node;
+            l1 = getNextNode(l1);
+            l2 = getNextNode(l2);
+
+            while (l1 != null || l2 != null || digitInTens != 0)
             {
 
                 if (l1 == null && l2 == null)
                 {
-                    result.next = new ListNode((int)carryDigit);
+                    node.next = new ListNode(digitInTens);
                     break;
                 }
 
-                int sum = ((l1 == null) ? 0 : l1.val) + ((l2 == null) ? 0 : l2.val);
-                int digitValue = sum % 10;
+                sum = getSumOfNodesValue(l1, l2) + digitInTens;
 
-                if (result == null && carryDigit == null)
-                {
-                    result = new ListNode(digitValue);
-                    headNode = result;
-                }
-                else if (carryDigit != null)
-                {
-                    int nodeValue = (digitValue + (int)carryDigit) % 10;
-                    result.next = new ListNode(nodeValue);
-                    result = result.next;
-                }
-                else
-                {
-                    result.next = new ListNode(digitValue);
-                    result = result.next;
-                }
+                digitInOnes = getDigitInOnes(sum);
+                digitInTens = getDigitInTens(sum);
+                node.next = new ListNode(digitInOnes);
 
-                if (carryDigit != null && digitValue + carryDigit >= 10)
-                    carryDigit = (digitValue + carryDigit) / 10;
-                else
-                    carryDigit = ((sum / 10 == 0) ? (int?)null : (sum / 10));
-
-                l1 = (l1 == null) ? null : l1.next;
-                l2 = (l2 == null) ? null : l2.next;
+                node = node.next;
+                l1 = getNextNode(l1);
+                l2 = getNextNode(l2);
             }
 
             return headNode;
+        }
+
+        private static int getDigitInTens(int sum)
+        {
+            return (sum / 10);
+        }
+
+        private static int getDigitInOnes(int numbers)
+        {
+            return numbers % 10;
+        }
+
+        private static ListNode getNextNode(ListNode node)
+        {
+            return (node == null) ? null : node.next;
+        }
+
+        private static int getSumOfNodesValue(ListNode l1, ListNode l2)
+        {
+            return ((l1 == null) ? 0 : l1.val) + ((l2 == null) ? 0 : l2.val);
         }
     }
 }
