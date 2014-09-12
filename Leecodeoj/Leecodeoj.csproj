@@ -46,6 +46,7 @@
     <Compile Include="BestTimeToBy_II.cs" />
     <Compile Include="Candy.cs" />
     <Compile Include="Common\ListNode.cs" />
+    <Compile Include="DuplicateSortedList.cs" />
     <Compile Include="MaxDepthOfBinaryTree.cs" />
     <Compile Include="PeopleQueue.cs" />
     <Compile Include="Program.cs" />

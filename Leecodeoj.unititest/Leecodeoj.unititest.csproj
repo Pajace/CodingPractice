@@ -61,6 +61,7 @@
     <Compile Include="Candy_Unittest.cs" />
     <Compile Include="TwoSum_Unittest.cs" />
     <Compile Include="AddTwoNumber_Unittest.cs" />
+    <Compile Include="UnitTest1.cs" />
     <Compile Include="WildcardMatching_unittest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
