@@ -4,7 +4,7 @@ using Leecodeoj.Common;
 namespace Leecodeoj.unititest
 {
     [TestClass]
-    public class UnitTest1
+    public class DuplicateSortedList_Unittest
     {
         private void AssertDuplicateSortedList(ListNode node, ListNode expected)
         {
@@ -13,7 +13,7 @@ namespace Leecodeoj.unititest
 
             while (expected != null)
             {
-                Assert.Equals(expected.val, actual.val);
+                Assert.AreEqual(expected.val, actual.val);
 
                 actual = actual.next;
                 expected = expected.next;

@@ -11,6 +11,7 @@
 //  Given 1->1->2->3->3, return 1->2->3.
 
 
+using Leecodeoj.Common;
 using System;
 namespace Leecodeoj
 {
@@ -26,7 +27,34 @@ namespace Leecodeoj
         /// <returns></returns>
         public Common.ListNode removeDuplicates(Common.ListNode head)
         {
-            throw new NotImplementedException();
+            if (head == null)
+                return null;
+
+            ListNode node = head;
+            ListNode nextNode = head.next;
+
+            while (node != null)
+            {
+
+                if (nextNode == null)
+                {
+                    node.next = nextNode;
+                    node = node.next;
+                }
+                else if (node.val == nextNode.val)
+                {
+                    node.next = nextNode.next;
+                }
+                else
+                {
+                    node = node.next;
+                }
+
+                if (node != null)
+                    nextNode = node.next;
+            }
+
+            return head;
         }
     }
 }
