@@ -44,6 +44,7 @@
     <Compile Include="AddTwoNumber.cs" />
     <Compile Include="BestTimeToBy_I.cs" />
     <Compile Include="BestTimeToBy_II.cs" />
+    <Compile Include="BinaryTreeInorderTraversal.cs" />
     <Compile Include="Candy.cs" />
     <Compile Include="Common\ListNode.cs" />
     <Compile Include="DuplicateSortedList.cs" />

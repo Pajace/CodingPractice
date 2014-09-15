@@ -31,10 +31,11 @@ namespace Leecodeoj
                 return null;
 
             ListNode node = head;
-            ListNode nextNode = head.next;
+            ListNode nextNode = null;
 
             while (node != null)
             {
+                    nextNode = node.next;
 
                 if (nextNode == null)
                 {
@@ -50,8 +51,6 @@ namespace Leecodeoj
                     node = node.next;
                 }
 
-                if (node != null)
-                    nextNode = node.next;
             }
 
             return head;

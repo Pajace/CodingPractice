@@ -62,6 +62,7 @@
     <Compile Include="TwoSum_Unittest.cs" />
     <Compile Include="AddTwoNumber_Unittest.cs" />
     <Compile Include="DuplicateSortedList_Unittest.cs" />
+    <Compile Include="BinaryTreeInorderTraversal_Unittest.cs" />
     <Compile Include="WildcardMatching_unittest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
