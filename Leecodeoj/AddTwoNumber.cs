@@ -26,7 +26,7 @@ namespace Leecodeoj
         /// <param name="root1"> non-negative numbers list node 1</param>
         /// <param name="root2"> non-negative numbers list node 2</param>
         /// <returns></returns>
-        public ListNode addTwoNumbers(Common.ListNode l1, Common.ListNode l2)
+        public ListNode addTwoNumbers2(Common.ListNode l1, Common.ListNode l2)
         {
             ListNode dummy = new ListNode(0);
             ListNode node = dummy;
@@ -47,6 +47,73 @@ namespace Leecodeoj
             }
 
             return dummy.next;
+        }
+
+
+        public ListNode addTwoNumbers(Common.ListNode list1Node, Common.ListNode list2Node)
+        {
+            ListNode dummy = new ListNode(0);
+            ListNode node = dummy;
+
+            int digitInTens = 0;
+
+            while (list1Node != null || list2Node != null || digitInTens != 0)
+            {
+                // 兩節點值相加並加上上一節點的近位值
+                int sum = CalculateTwoNodeSum(list1Node, list2Node) + digitInTens;
+                // 取得個位數
+                int digitInOnes = GetDigitInOnes(sum);
+                // 取得十位數
+                digitInTens = GetDigitInTens(digitInTens, sum);
+                // 將相加的個位數新增至相加結果的 LinkedList 
+                node = AddSumToResultLinkedListNextNode(node, digitInOnes);
+                node = GetNextNode(node);
+                // 取得兩 linked list 的下一節點
+                list1Node = GetNextNode(list1Node);
+                list2Node = GetNextNode(list2Node);
+            }
+
+            return dummy.next;
+        }
+
+
+        private static ListNode GetNextNode(ListNode node)
+        {
+            // 取得下一個節點
+            return (node == null) ? null : node.next;
+        }
+
+        private static ListNode AddSumToResultLinkedListNextNode(ListNode node, int digitInOnes)
+        {
+            // 將個位數新增到結果的 linked list 上
+            node.next = new ListNode(digitInOnes);
+            return node;
+        }
+
+        private static int GetDigitInTens(int digitInTens, int sum)
+        {
+            // 取得十位數
+            return  sum / 10;
+        }
+
+        private static int GetDigitInOnes(int sum)
+        {
+            // 取得個位數
+            return sum % 10;
+        }
+
+        private static int CalculateTwoNodeSum(Common.ListNode list1Node, Common.ListNode list2Node)
+        {
+            // 兩個 Linked list 節點相加
+            int sum = GetListNodeValue(list1Node) + GetListNodeValue(list2Node);
+            return sum;
+        }
+
+        private static int GetListNodeValue(ListNode node)
+        {
+            if (node != null)
+                return node.val;
+            return 0;
         }
 
         private static int getDigitInTens(int sum)

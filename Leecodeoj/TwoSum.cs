@@ -44,10 +44,25 @@ namespace Leecodeoj
                 {
                     result[0] = dict.Where(pair => pair.Value == (target - inputNumbers[i])).Select(pair => pair.Key).FirstOrDefault();
                     result[1] = i + 1;
+                    return result;
                 }
                 dict.Add(i + 1, inputNumbers[i]);
             }
             return result;
+            //Dictionary<int, int> dict = new Dictionary<int, int>();
+
+            //for (int i = 0; i < inputNumbers.Length; i++)
+            //{
+            //    int findedNumber = target - inputNumbers[i];
+            //    if (dict.ContainsKey(findedNumber))
+            //    {
+            //        int index2 = dict[findedNumber];
+            //        int index1 = i;
+            //        return new int[] { index1+1, index2+1};
+            //    }
+            //    dict.Add(inputNumbers[i], i);
+            //}
+            //return null;
         }
 
         public int[] findTwoSumIndex_BigONxN(int[] inputNumbers, int target)

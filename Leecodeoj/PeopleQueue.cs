@@ -46,11 +46,11 @@ namespace Leecodeoj
             return selectedPerson;
         }
 
-        private static int GetNextPersonIndex(int interval, int countOfPersonList, int selectedIndex)
+        private static int GetNextPersonIndex(int interval, int countOfPersonList, int currentSelectedIndex)
         {
-            selectedIndex += interval;
-            selectedIndex %= countOfPersonList;
-            return selectedIndex;
+            currentSelectedIndex += interval;
+            currentSelectedIndex %= countOfPersonList;
+            return currentSelectedIndex;
         }
 
         private static void InitialPersonList(int totalPerson, List<int> personList)
