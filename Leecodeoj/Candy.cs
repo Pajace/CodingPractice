@@ -26,14 +26,15 @@ namespace Leecodeoj
             if (ratings == null || ratings.Length == 0)
                 return 0;
             else if (ratings.Length == 1)
-                return 1;
+                return ratings.Length;
+            else if (ratings.Length == 2)
+                return 3;
 
             int[] candies = new int[ratings.Length];
             candies[0] = 1;
-
             for (int i = 1; i < ratings.Length; i++)
             {
-                if (ratings[i - 1] < ratings[i])
+                if (ratings[i] > ratings[i - 1])
                     candies[i] = candies[i - 1] + 1;
                 else
                     candies[i] = 1;
@@ -44,13 +45,9 @@ namespace Leecodeoj
                 if (ratings[i] < ratings[i - 1] && candies[i] >= candies[i - 1])
                     candies[i - 1] = candies[i] + 1;
             }
-
-            int minimunCandies = 0;
-            foreach (var item in candies)
-            {
-                minimunCandies += item;
-            }
-            return minimunCandies;
+            
+            
+            return candies.Sum();
         }
     }
 }
