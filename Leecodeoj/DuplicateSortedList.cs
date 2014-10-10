@@ -27,30 +27,18 @@ namespace Leecodeoj
         /// <returns></returns>
         public Common.ListNode removeDuplicates(Common.ListNode head)
         {
-            if (head == null)
-                return null;
-
             ListNode node = head;
             ListNode nextNode = null;
 
             while (node != null)
             {
-                    nextNode = node.next;
-
+                nextNode = node.next;
                 if (nextNode == null)
-                {
-                    node.next = nextNode;
                     node = node.next;
-                }
                 else if (node.val == nextNode.val)
-                {
                     node.next = nextNode.next;
-                }
                 else
-                {
                     node = node.next;
-                }
-
             }
 
             return head;

@@ -27,6 +27,15 @@ namespace Leecodeoj.unititest
         }
 
         [TestMethod]
+        public void testDecrease()
+        {
+            int[] ratings = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+            int expected = 55;
+
+            AssertMinimunCandiesYouMustGive(expected, ratings);
+        }
+
+        [TestMethod]
         public void test()
         {
             int[] ratings = { 3, 2, 1, 4, 3 };

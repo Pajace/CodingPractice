@@ -30,24 +30,51 @@ namespace Leecodeoj
             else if (ratings.Length == 2)
                 return 3;
 
+            bool isAlwaysIncrease = true;
+            int toatalCandies = 0;
+
             int[] candies = new int[ratings.Length];
+
+            ForwardCheck(ratings, candies, ref isAlwaysIncrease);
+
+            if (isAlwaysIncrease)
+            {
+                toatalCandies = ((1 + ratings.Length) * ratings.Length) / 2;
+            }
+            else
+            {
+                candies = BackwardCheck(ratings, candies, toatalCandies);
+                toatalCandies = candies.Sum();
+            }
+
+
+            return toatalCandies;
+        }
+
+        private static int[] BackwardCheck(int[] ratings, int[] candies, int toatalCandies)
+        {
+            for (int i = ratings.Length - 1; i > 0; i--)
+            {
+                if (ratings[i] < ratings[i - 1] && candies[i] >= candies[i - 1])
+                    candies[i - 1] = candies[i] + 1;
+            }
+            return candies;
+        }
+
+        private static int[] ForwardCheck(int[] ratings, int[] candies, ref bool isAlwaysIncrease)
+        {
             candies[0] = 1;
             for (int i = 1; i < ratings.Length; i++)
             {
                 if (ratings[i] > ratings[i - 1])
                     candies[i] = candies[i - 1] + 1;
                 else
+                {
                     candies[i] = 1;
+                    isAlwaysIncrease = false;
+                }
             }
-
-            for (int i = ratings.Length - 1; i > 0; i--)
-            {
-                if (ratings[i] < ratings[i - 1] && candies[i] >= candies[i - 1])
-                    candies[i - 1] = candies[i] + 1;
-            }
-            
-            
-            return candies.Sum();
+            return candies;
         }
     }
 }
