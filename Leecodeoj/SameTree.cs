@@ -42,13 +42,13 @@ namespace Leecodeoj
                 if (isOnlyOneNodeHasLeftChild || isOnlyOneNodeHasRightChild)
                     return false;
 
-                if (node1.left!=null)
+                if (node1.left != null)
                 {
                     stack1.Push(node1.left);
                     stack2.Push(node2.left);
                 }
 
-                if (node1.right!=null)
+                if (node1.right != null)
                 {
                     stack1.Push(node1.right);
                     stack2.Push(node2.right);
