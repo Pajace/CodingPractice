@@ -37,33 +37,48 @@ namespace Leecodeoj
             if (root == null)
                 return maxDepth;
 
-            Stack<TreeNode> stack = new Stack<TreeNode>();
-            Stack<TreeNode> path = new Stack<TreeNode>();
+            Stack<TreeNode> remainPathStack = new Stack<TreeNode>();
+            Stack<TreeNode> currentPathStack = new Stack<TreeNode>();
 
-            stack.Push(root);
+            remainPathStack.Push(root);
 
-            while (stack.Count != 0)
+            TreeNode node;
+            while (IsNotEmpty(remainPathStack))
             {
-                root = stack.Peek();
+                node = remainPathStack.Peek();
 
-                if (path.Count != 0 && root == path.Peek()) // 到最末端節點
+                if (IsCurrentPathDownToLeafOrOnBackWay(currentPathStack, node))
                 {
-                    if (path.Count > maxDepth)
-                        maxDepth = path.Count;
-                    stack.Pop();
-                    path.Pop();
+                    if (currentPathStack.Count > maxDepth)
+                        maxDepth = currentPathStack.Count;
+                    remainPathStack.Pop();
+                    currentPathStack.Pop();
                 }
                 else
                 {
-                    path.Push(root);
-                    if (root.left != null)
-                        stack.Push(root.left);
-                    if (root.right != null)
-                        stack.Push(root.right);
+                    currentPathStack.Push(node);
+                    if (node.left != null)
+                        remainPathStack.Push(node.left);
+                    if (node.right != null)
+                        remainPathStack.Push(node.right);
                 }
             }
 
             return maxDepth;
+        }
+
+        private static bool IsNotEmpty(Stack<TreeNode> currentPathStack)
+        {
+            return currentPathStack.Count != 0;
+        }
+
+        private static bool IsCurrentPathDownToLeafOrOnBackWay(Stack<TreeNode> currentPathStack, TreeNode node)
+        {
+            // 因為當目前的節點沒有任何子節點時， remainPathStack 就不會 push 節點進去
+            // 此時，remainPathStack 的 peek 會和 currentPathStack 的 peek 相同
+            if (currentPathStack.Count == 0)
+                return false;
+            return node == currentPathStack.Peek();
         }
     }
 }
