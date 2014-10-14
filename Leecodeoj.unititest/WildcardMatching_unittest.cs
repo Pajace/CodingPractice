@@ -155,5 +155,29 @@ namespace Leecodeoj.unititest
         {
             isMatch("aabbcasdf32cc", "*a*b*c?", true);
         }
+
+        [TestMethod]
+        public void isMatch_moreCharacter7()
+        {
+            isMatch("asadk;fjabaskjdfc", "*a*b*c*", true);
+        }
+
+        [TestMethod]
+        public void isMatch_MoreCharacter5()
+        {
+            isMatch("", "", true);
+        }
+
+        [TestMethod]
+        public void isMatch_MoreCharacter6()
+        {
+            isMatch("aacdefgd", "a*d*d", true);
+        }
+
+        [TestMethod]
+        public void isMatch_MoreCharacter8()
+        {
+            isMatch("cabaabzdfab", "*ab", true);
+        }
     }
 }

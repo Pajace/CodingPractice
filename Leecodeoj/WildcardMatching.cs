@@ -14,44 +14,48 @@ namespace Leecodeoj
     {
         public static bool IsMatch(string text, string pattern)
         {
-            char[] textArray = text.ToArray();
-            char[] patternArray = pattern.ToArray();
             int textIndex = 0;
             int patternIndex = 0;
-            int startIndex = -1;
-            int ss = 0;
+            int asteriskIndex = -1;
+            int asteriskTextIndex = 0;
 
-            while(textIndex < textArray.Length)
+            while (textIndex < text.Count())
             {
-                bool isNotPatternEnd = patternIndex < patternArray.Length;
-
-                if (isNotPatternEnd && (patternArray[patternIndex] == '?' || textArray[textIndex] == patternArray[patternIndex]))
+                bool isEndOfPattern = patternIndex >= pattern.Count();
+                if (!isEndOfPattern && IsTextEqualPatternOrQuestionMark(text[textIndex], pattern[patternIndex]))
                 {
                     textIndex++;
                     patternIndex++;
-                    continue;
                 }
 
-                if (isNotPatternEnd && patternArray[patternIndex] == '*')
+                else if (!isEndOfPattern && pattern[patternIndex] == '*')
                 {
-                    startIndex = patternIndex++;
-                    ss = textIndex;
-                    continue;
+                    asteriskIndex = patternIndex;
+                    patternIndex += 1;
+                    asteriskTextIndex = textIndex;
                 }
-
-                if (startIndex != -1)
+                else if (asteriskIndex != -1) // 表示前面有出現過 *
                 {
-                    textIndex = ++ss;
-                    patternIndex = startIndex + 1;
-                    continue;
+                    textIndex = ++asteriskTextIndex;
+                    patternIndex = asteriskIndex + 1;
                 }
-                return false;
+                else
+                {
+                    return false;
+                }
             }
 
-            while (patternIndex < patternArray.Length && patternArray[patternIndex]=='*')
+            while (patternIndex < pattern.Count() && pattern[patternIndex] == '*')
                 patternIndex++;
 
-            return patternIndex == patternArray.Length;
+            return patternIndex == pattern.Count();
         }
+
+        public static bool IsTextEqualPatternOrQuestionMark(char character, char pattern)
+        {
+            if (character == pattern || pattern == '?')
+                return true;
+            return false;
+        }      
     }
 }
