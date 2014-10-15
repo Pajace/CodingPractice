@@ -20,7 +20,14 @@ namespace Leecodeoj
             int maxProduct = 0;
             for (int i = 1; i < array.Length; i++)
             {
-                int product = array[i - 1] * array[i];
+                int product = array[i];
+                if (product > maxProduct)
+                    maxProduct = product;
+                if (array[i - 1] == 0)
+                    product = array[i];
+                else
+                    product = array[i - 1] * array[i];
+
                 if (product > maxProduct)
                     maxProduct = product;
             }

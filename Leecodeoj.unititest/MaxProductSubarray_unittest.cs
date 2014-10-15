@@ -27,5 +27,14 @@ namespace Leecodeoj.unititest
 
             assertMaxProduct(inputArray, expectedMaxProduct);
         }
+
+        [TestMethod]
+        public void MaxProductSubarray_2element_with_leader_0()
+        {
+            int[] inputArary = { 0, 2 };
+            int expectedMaxProduct = 2;
+
+            assertMaxProduct(inputArary, expectedMaxProduct);
+        }
     }
 }
