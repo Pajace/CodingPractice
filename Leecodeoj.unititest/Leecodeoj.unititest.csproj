@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="MaxProductSubarray_unittest.cs" />
     <Compile Include="SingleNumber_unittest.cs" />
     <Compile Include="MaxDepthOfBinaryTree_Unittest.cs" />
     <Compile Include="SameTree_Unittest.cs" />
