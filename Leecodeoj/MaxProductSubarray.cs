@@ -14,22 +14,27 @@ namespace Leecodeoj
     {
         public int FindMaxProduct(int[] array)
         {
-            if (array.Length == 1)
-                return array[0];
+            if (array.Length == 0)
+                return 0;
 
-            int maxProduct = 0;
+            int currentMaxProduct = array[0];
+            int currentMinProduct = array[0];
+            int maxProduct = array[0];
+
             for (int i = 1; i < array.Length; i++)
             {
-                int product = array[i];
-                if (product > maxProduct)
-                    maxProduct = product;
-                if (array[i - 1] == 0)
-                    product = array[i];
+                if (array[i] >= 0)
+                {
+                    currentMaxProduct = Math.Max(currentMaxProduct * array[i], array[i]);
+                    currentMinProduct = Math.Min(currentMinProduct * array[i], array[i]);
+                }
                 else
-                    product = array[i - 1] * array[i];
-
-                if (product > maxProduct)
-                    maxProduct = product;
+                {
+                    int temp = currentMaxProduct;
+                    currentMaxProduct = Math.Max(currentMinProduct * array[i], array[i]);
+                    currentMinProduct = Math.Min(temp * array[i], array[i]);
+                }
+                maxProduct = Math.Max(maxProduct, currentMaxProduct);
             }
             return maxProduct;
         }

@@ -19,14 +19,14 @@ namespace Leecodeoj.unititest
             Assert.AreEqual(expectedMaxProduct, actualMaxProduct);
         }
 
-        [TestMethod]
-        public void MaxProductSubarray_2element_product6()
-        {
-            int[] inputArray = { 2, 3, -4, 4};
-            int expectedMaxProduct = 6;
+        //[TestMethod]
+        //public void MaxProductSubarray_2element_product6()
+        //{
+        //    int[] inputArray = { 2, 3, -4, 4};
+        //    int expectedMaxProduct = 6;
 
-            assertMaxProduct(inputArray, expectedMaxProduct);
-        }
+        //    assertMaxProduct(inputArray, expectedMaxProduct);
+        //}
 
         [TestMethod]
         public void MaxProductSubarray_2element_with_leader_0()
@@ -35,6 +35,51 @@ namespace Leecodeoj.unititest
             int expectedMaxProduct = 2;
 
             assertMaxProduct(inputArary, expectedMaxProduct);
+        }
+
+        [TestMethod]
+        public void MaxProductSubarray_4element_with_2NegativeNumber()
+        {
+            int[] inputArray = { -2, 3, -4 };
+            int expectedMaxProduct = 24;
+
+            assertMaxProduct(inputArray, expectedMaxProduct);
+        }
+
+        [TestMethod]
+        public void MaxProductSubArray_2Element_with_2NegativeNumber()
+        {
+            int[] inputArray = { -4, -3 };
+            int expectedMaxProduct = 12;
+
+            assertMaxProduct(inputArray, expectedMaxProduct);
+        }
+
+        [TestMethod]
+        public void MaxProductSubArray_3Element_with_2NegativeNumber_and_1_zero()
+        {
+            int[] inputArray = { -2, 0, -1 };
+            int expectedMaxProduct = 0;
+
+            assertMaxProduct(inputArray, expectedMaxProduct);
+        }
+
+        [TestMethod]
+        public void MaxProductSubArray_separator_by_0_with_negative_number()
+        {
+            int[] inputarray = { -1, -2, -3, 0 , -3, -4, -1};
+            int expectedMaxProduct = 12;
+
+            assertMaxProduct(inputarray, expectedMaxProduct);
+        }
+
+        [TestMethod]
+        public void MaxProductSubArray_SingleNegativeNumber()
+        {
+            int[] inputArray = { -2 };
+            int expectedMaxProduct = -2;
+
+            assertMaxProduct(inputArray, expectedMaxProduct);
         }
     }
 }
