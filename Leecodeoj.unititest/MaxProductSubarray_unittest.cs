@@ -19,14 +19,14 @@ namespace Leecodeoj.unititest
             Assert.AreEqual(expectedMaxProduct, actualMaxProduct);
         }
 
-        //[TestMethod]
-        //public void MaxProductSubarray_2element_product6()
-        //{
-        //    int[] inputArray = { 2, 3, -4, 4};
-        //    int expectedMaxProduct = 6;
+        [TestMethod]
+        public void MaxProductSubarray_2element_product6()
+        {
+            int[] inputArray = { 2, 3, -4, 4 };
+            int expectedMaxProduct = 6;
 
-        //    assertMaxProduct(inputArray, expectedMaxProduct);
-        //}
+            assertMaxProduct(inputArray, expectedMaxProduct);
+        }
 
         [TestMethod]
         public void MaxProductSubarray_2element_with_leader_0()
