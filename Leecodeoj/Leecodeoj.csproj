@@ -47,6 +47,7 @@
     <Compile Include="BinaryTreeInorderTraversal.cs" />
     <Compile Include="Candy.cs" />
     <Compile Include="Common\ListNode.cs" />
+    <Compile Include="CountAndSay.cs" />
     <Compile Include="DuplicateSortedList.cs" />
     <Compile Include="MaxDepthOfBinaryTree.cs" />
     <Compile Include="MaxProductSubarray.cs" />
