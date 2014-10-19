@@ -51,6 +51,7 @@
     <Compile Include="DuplicateSortedList.cs" />
     <Compile Include="MaxDepthOfBinaryTree.cs" />
     <Compile Include="MaxProductSubarray.cs" />
+    <Compile Include="PalindromeNumber.cs" />
     <Compile Include="PeopleQueue.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

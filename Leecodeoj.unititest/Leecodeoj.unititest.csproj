@@ -66,6 +66,7 @@
     <Compile Include="BinaryTreeInorderTraversal_Unittest.cs" />
     <Compile Include="RemoveElement_Unittest.cs" />
     <Compile Include="CountAndSay_Unittest.cs" />
+    <Compile Include="PalindromeNumber_Unittest.cs" />
     <Compile Include="WildcardMatching_unittest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
